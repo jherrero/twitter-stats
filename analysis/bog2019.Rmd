@@ -669,9 +669,11 @@ out <- knit_child(text = unlist(src_list))
 
 `r out`
 
+---
+
 # Session info {.unnumbered}
 
 ```{r session-info}
-sessionInfo
+sessionInfo()
 ```
 
