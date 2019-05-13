@@ -64,9 +64,10 @@ conf_name <- " 2019"
 timezone <- "Europe/London"
 days <- c("2019-05-13")
 accent <- "skyblue3"
+light_accent <- rgb(t((255 - (255 - col2rgb(accent)[, 1]) / 2)), maxColorValue = 255)
 pal <- "Set1"
 topics_k <- 6
-fixed <- FALSE # Set to TRUE to stop adding new tweets
+fixed <- TRUE # Set to TRUE to stop adding new tweets
 ```
 
 ```{r load, include = FALSE}
@@ -115,8 +116,17 @@ collected using the `rtweet` R package.
 ```{r tweets-by-day}
 tweets %>% 
     mutate(date = as_date(created_at, tz = timezone)) %>% 
-    count(date) %>% 
-    ggplot(aes(date, n)) + geom_col(fill = accent) +  
+    group_by(date, is_retweet) %>%
+    summarise(n = n()) %>%
+    spread(is_retweet, n, fill = 0) %>%
+    mutate(original = `FALSE`, total = sum(`FALSE` + `TRUE`)) %>%
+    select(date, original, total) %>%
+    ggplot(aes(date, total)) +
+        geom_col(aes(fill = "retweet"), col = accent) +
+        geom_col(aes(date, original, fill = "original")) +
+        scale_fill_manual(name = "Tweet type",
+                          limits = c("retweet", "original"),
+                          values = c(original = accent, retweet = light_accent)) + 
         labs(x = "Date", y = "Tweets",
              title = paste(hashtag, "tweets per day")) + 
         theme(axis.text = element_text(size = 12),
@@ -135,9 +145,17 @@ tweets_days <- tweets %>%
     filter(date >= as_date(min(days)), date <= as_date(max(days)))
 
 tweets_days %>%
-    summarise(count = n()) %>% 
-    ggplot(aes(hour, count)) +
-        geom_col(fill = accent) +
+    group_by(date, hour, is_retweet) %>%
+    summarise(n = n()) %>%
+    spread(is_retweet, n, fill = 0) %>%
+    mutate(original = `FALSE`, total = sum(`FALSE` + `TRUE`)) %>%
+    select(date, hour, original, total) %>%
+    ggplot(aes(hour, total)) +
+        geom_col(aes(fill = "retweet"), col = accent) +
+        geom_col(aes(hour, original, fill = "original")) +
+        scale_fill_manual(name = "Tweet type",
+                          limits = c("retweet", "original"),
+                          values = c(original = accent, retweet = light_accent)) + 
         facet_grid(strftime(date, "%b %d") ~ .) + 
         labs(x = "Hour", y = "Tweets",
              title = paste(hashtag, "tweets by time of day")) + 
@@ -151,33 +169,24 @@ tweets_days %>%
 
 ```{r tweets-top-users}
 tweets %>% 
-    count(screen_name) %>% 
-    arrange(desc(n)) %>%
-    slice(1:20) %>% 
-    ggplot(aes(reorder(screen_name, n), n)) +
-        geom_col(fill = accent) +
+    group_by(screen_name, is_retweet) %>%
+    summarise(n = n()) %>%
+    spread(is_retweet, n, fill = 0) %>%
+    mutate(original = `FALSE`, total = sum(`FALSE` + `TRUE`)) %>%
+    select(screen_name, original, total) %>%
+    arrange(desc(total)) %>%
+    ungroup() %>%
+    slice(1:20) %>%
+    ggplot(aes(reorder(screen_name, total), total)) +
+        geom_col(aes(fill = "retweet"), col = accent) +
+        geom_col(aes(reorder(screen_name, total), original, fill = "original")) +
         coord_flip() + 
+        scale_fill_manual(name = "Tweet type",
+                          limits = c("retweet", "original"),
+                          values = c(original = accent, retweet = light_accent)) + 
         labs(x = "Screen Name", y = "Tweets",
              title = paste(hashtag, "tweets by user"),
              subtitle = "top 20 users") + 
-        theme(axis.text = element_text(size = 12),
-              axis.title = element_text(size = 12))
-```
-
-## Top original tweeters
-
-```{r tweets-top-users-orig}
-tweets %>%
-    filter(is_retweet == FALSE) %>%
-    count(screen_name) %>% 
-    arrange(desc(n)) %>%
-    slice(1:20) %>% 
-    ggplot(aes(reorder(screen_name, n), n)) +
-        geom_col(fill = accent) +
-        coord_flip() + 
-        labs(x = "Screen Name", y = "Tweets",
-             title = paste(hashtag, "tweets by user"),
-             subtitle = "top 20 users (no retweets)") + 
         theme(axis.text = element_text(size = 12),
               axis.title = element_text(size = 12))
 ```
@@ -220,9 +229,15 @@ tweets %>%
     mutate(screen_name = factor(screen_name,
                                 levels = levels(top_users))) %>%
     mutate(datetime = as_datetime(created_at, tz = timezone)) %>%
-    ggplot(aes(datetime, 1, shape = is_retweet, colour = screen_name)) +
+    ggplot(aes(datetime, 1, shape = is_retweet, colour = screen_name, fill = screen_name)) +
         geom_jitter(width = 0, height = 1) +
         scale_color_brewer(palette = pal, guide = FALSE) +
+        scale_fill_brewer(palette = pal, guide = FALSE) +
+        scale_shape_manual(name = "Tweet type",
+                           values = c(`TRUE` = 1, `FALSE` = 21),
+                           labels = c("retweet", "original"),
+                           guide=FALSE) +
+        # scale_fill_manual(guide=FALSE) +
         facet_wrap(~ screen_name, ncol = 1) +
         labs(x = "Datetime",
              title = paste(hashtag, "top users timeline"),
@@ -235,30 +250,33 @@ tweets %>%
               legend.position = "bottom")
 ```
 
-## Top tweeters by day
-
-### All tweets {.tabset}
-
 ```{r tweets-top-users-days, results = "hide"}
 plot_list <- lapply(seq_along(days), function(ind) {
     tweets_days %>% 
         filter(date == as_date(days[ind])) %>%
+        group_by(screen_name, is_retweet) %>%
+        summarise(n = n()) %>%
+        spread(is_retweet, n, fill = 0) %>%
+        mutate(original = `FALSE`, total = sum(`FALSE` + `TRUE`)) %>%
+        select(screen_name, original, total) %>%
+        arrange(desc(total)) %>%
         ungroup() %>%
-        count(screen_name) %>% 
-        arrange(desc(n)) %>%
-        slice(1:20) %>% 
-        ggplot(aes(reorder(screen_name, n), n)) +
-            geom_col(fill = accent) +
-            coord_flip() +
+        slice(1:20) %>%
+        ggplot(aes(reorder(screen_name, total), total)) +
+            geom_col(aes(fill = "retweet"), col = accent) +
+            geom_col(aes(reorder(screen_name, total), original, fill = "original")) +
+            coord_flip() + 
+            scale_fill_manual(name = "Tweet type",
+                              values = c(retweet = light_accent, original = accent)) + 
             labs(x = "Screen Name", y = "Tweets",
-                 title = paste(hashtag, "tweets by user, Day", ind),
+                 title = paste(hashtag, "tweets by user"),
                  subtitle = "top 20 users") + 
             theme(axis.text = element_text(size = 12),
                   axis.title = element_text(size = 12))
 })
 
 src_list <- lapply(seq_along(plot_list), function(ind) {
-    src <- c("#### Day {{ind}} {.unnumbered}",
+    src <- c("### Day {{ind}} {.unnumbered}",
              "```{r tweets-top-users-day{{ind}}}",
              "plot_list[[{{ind}}]]",
              "```",
@@ -266,45 +284,10 @@ src_list <- lapply(seq_along(plot_list), function(ind) {
     knit_expand(text = src)
 })
 
-out <- knit_child(text = unlist(src_list))
+out <- knit_child(text = unlist(c("## Top tweeters by day", src_list)))
 ```
 
-`r out`
-
-### Original tweets {.tabset}
-
-```{r tweets-top-users-orig-days, results = "hide"}
-plot_list <- lapply(seq_along(days), function(ind) {
-    tweets_days %>% 
-        filter(date == as_date(days[ind])) %>%
-        ungroup() %>%
-        filter(is_retweet == FALSE) %>%
-        count(screen_name) %>% 
-        arrange(desc(n)) %>%
-        slice(1:20) %>% 
-        ggplot(aes(reorder(screen_name, n), n)) +
-            geom_col(fill = accent) +
-            coord_flip() +
-            labs(x = "Screen Name", y = "Tweets",
-                 title = paste(hashtag, "tweets by user, Day", ind),
-                 subtitle = "top 20 users (no retweets)") + 
-            theme(axis.text = element_text(size = 12),
-                  axis.title = element_text(size = 12))
-})
-
-src_list <- lapply(seq_along(plot_list), function(ind) {
-    src <- c("#### Day {{ind}} {.unnumbered}",
-             "```{r tweets-top-users-orig-day{{ind}}}",
-             "plot_list[[{{ind}}]]",
-             "```",
-             "")
-    knit_expand(text = src)
-})
-
-out <- knit_child(text = unlist(src_list))
-```
-
-`r out`
+`r if (length(days) > 1) { out }`
 
 ## Sources
 
