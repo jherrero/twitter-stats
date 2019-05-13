@@ -216,6 +216,7 @@ top_users <- tweets %>%
 
 tweets %>%
     filter(screen_name %in% top_users) %>%
+    filter(as_date(created_at, tz = timezone) %in% as_date(days)) %>%
     mutate(screen_name = factor(screen_name,
                                 levels = levels(top_users))) %>%
     mutate(datetime = as_datetime(created_at, tz = timezone)) %>%
