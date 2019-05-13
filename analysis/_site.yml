@@ -5,10 +5,12 @@ navbar:
   left:
     - text: "Home"
       href: index.html
-    - text: "Hashtags"
+    - text: "Meetings"
       menu:
-        - text: "BoG19"
+        - text: "CHSL Biology of Genomes - May 2019"
           href: bog2019.html
+        - text: "Rethinking Cancer - UCL Cancer Domain - May 2019"
+          href: CancerDomainMay19.html
   right:
     - text: "About"
       href: about.html

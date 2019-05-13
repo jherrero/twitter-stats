@@ -1,0 +1,1615 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+<meta name="author" content="Javier Herrero" />
+
+
+<title>Twitter coverage of the Rethinking Cancer UCL Cancer Domain Symposium</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.0.13/css/fa-svg-with-js.css" rel="stylesheet" />
+<script src="site_libs/font-awesome-5.0.13/js/fontawesome-all.min.js"></script>
+<script src="site_libs/font-awesome-5.0.13/js/fa-v4-shims.min.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+  padding-left: 25px;
+  text-indent: 0;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">lazappi's Twitter stats</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Meetings
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="bog2019.html">CHSL Biology of Genomes - May 2019</a>
+    </li>
+    <li>
+      <a href="CancerDomainMay19.html">Rethinking Cancer - UCL Cancer Domain - May 2019</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="about.html">About</a>
+</li>
+<li>
+  <a href="https://github.com/jherrero/twitter-stats">
+    <span class="fa fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Twitter coverage of the ‘Rethinking Cancer’ UCL Cancer Domain Symposium</h1>
+<h4 class="author"><em>Javier Herrero</em></h4>
+<h4 class="date"><em>2019-05-13 11:52:49</em></h4>
+
+</div>
+
+
+<div id="introduction" class="section level1">
+<h1><span class="header-section-number">1</span> Introduction</h1>
+<p>An analysis of tweets from the 2019 conference. A total of 97 tweets from 38 users were collected using the <code>rtweet</code> R package.</p>
+</div>
+<div id="timeline" class="section level1">
+<h1><span class="header-section-number">2</span> Timeline</h1>
+<div id="tweets-by-day" class="section level2">
+<h2><span class="header-section-number">2.1</span> Tweets by day</h2>
+<p><img src="figures/CancerDomainMay19/tweets-by-day-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="tweets-by-day-and-time" class="section level2">
+<h2><span class="header-section-number">2.2</span> Tweets by day and time</h2>
+<p>Filtered for dates 2019-05-13 - 2019-05-13 in the Europe/London timezone.</p>
+<p><img src="figures/CancerDomainMay19/tweets-by-day-hour-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="users" class="section level1">
+<h1><span class="header-section-number">3</span> Users</h1>
+<div id="top-tweeters" class="section level2">
+<h2><span class="header-section-number">3.1</span> Top tweeters</h2>
+<p><img src="figures/CancerDomainMay19/tweets-top-users-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="top-original-tweeters" class="section level2">
+<h2><span class="header-section-number">3.2</span> Top original tweeters</h2>
+<p><img src="figures/CancerDomainMay19/tweets-top-users-orig-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="retweet-proportion" class="section level2">
+<h2><span class="header-section-number">3.3</span> Retweet proportion</h2>
+<p><img src="figures/CancerDomainMay19/tweets-retweet-prop-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="top-tweeters-by-time" class="section level2">
+<h2><span class="header-section-number">3.4</span> Top tweeters by time</h2>
+<p><img src="figures/CancerDomainMay19/tweets-top-users-time-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="top-tweeters-by-day" class="section level2">
+<h2><span class="header-section-number">3.5</span> Top tweeters by day</h2>
+<div id="all-tweets" class="section level3 tabset">
+<h3><span class="header-section-number">3.5.1</span> All tweets</h3>
+<div id="day-1" class="section level4 unnumbered">
+<h4>Day 1</h4>
+<p><img src="figures/CancerDomainMay19/tweets-top-users-day1-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="original-tweets" class="section level3 tabset">
+<h3><span class="header-section-number">3.5.2</span> Original tweets</h3>
+<div id="day-1-1" class="section level4 unnumbered">
+<h4>Day 1</h4>
+<p><img src="figures/CancerDomainMay19/tweets-top-users-orig-day1-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+</div>
+<div id="sources" class="section level2">
+<h2><span class="header-section-number">3.6</span> Sources</h2>
+<p><img src="figures/CancerDomainMay19/tweets-top-sources-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="networks" class="section level1">
+<h1><span class="header-section-number">4</span> Networks</h1>
+<div id="replies" class="section level2">
+<h2><span class="header-section-number">4.1</span> Replies</h2>
+<p>The “replies network”, composed from users who reply directly to one another, coloured by page rank.</p>
+<p><img src="figures/CancerDomainMay19/reply-network-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="mentions" class="section level2">
+<h2><span class="header-section-number">4.2</span> Mentions</h2>
+<p>The “mentions network”, where users mention other users in their tweets. Node colour, label size and alpha adjusted according to PageRank score.</p>
+<p><img src="figures/CancerDomainMay19/mentions-network-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="retweets" class="section level1">
+<h1><span class="header-section-number">5</span> Retweets</h1>
+<div id="retweet-proportion-1" class="section level2">
+<h2><span class="header-section-number">5.1</span> Retweet proportion</h2>
+<p><img src="figures/CancerDomainMay19/is-retweet-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="retweet-count" class="section level2">
+<h2><span class="header-section-number">5.2</span> Retweet count</h2>
+<p><img src="figures/CancerDomainMay19/retweet-count-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="top-retweets" class="section level2">
+<h2><span class="header-section-number">5.3</span> Top retweets</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+screen_name
+</th>
+<th style="text-align:left;">
+text
+</th>
+<th style="text-align:right;">
+retweet_count
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+UCLCancerECN
+</td>
+<td style="text-align:left;">
+Only a week to go until the #UCLCancerDomain Symposium where our shortlisted #earlycareer researchers will be showcasing the latest cancer research across UCL! #postdoclife #PhDlife #CancerResearch
+</td>
+<td style="text-align:right;">
+7
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+UCLCancerECN
+</td>
+<td style="text-align:left;">
+Big shout out to all #earlycareer researchers (Masters, PhDs, postdocs and beyond) attending today’s #UCLCancerDomain Symposium! Pop by our #earlycareer network stall and help us map #CancerResearch across UCL. <span class="citation">@ucl_slms</span>
+</td>
+<td style="text-align:right;">
+7
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ucl_slms
+</td>
+<td style="text-align:left;">
+Only 3 days until the #UCLCancerDomain Symposium | Rethinking Cancer! It will be fascinating day of talks, networking and discussion sessions. Some of our speakers are: <span class="citation">@MarcelLevi</span> <span class="citation">@MazzucatoM</span> <span class="citation">@andrew_pom</span> <span class="citation">@CharlesSwanton</span> <span class="citation">@ebeecham1</span> <span class="citation">@mmkoo12</span> <span class="citation">@cd_steele</span> <span class="citation">@mrsprostate</span> <span class="citation">@Norapashayan</span>
+</td>
+<td style="text-align:right;">
+6
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+jsvaidya
+</td>
+<td style="text-align:left;">
+Prof Daniel Hochhauser starting off the first UCL cancer domain symposium-Rethinking Cancer #UCLCancerDomain <span class="citation">@ucl_slms</span> <span class="citation">@uclcancer</span> <a href="https://t.co/yTkb1CAwtS" class="uri">https://t.co/yTkb1CAwtS</a>
+</td>
+<td style="text-align:right;">
+5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+jsvaidya
+</td>
+<td style="text-align:left;">
+Prof Charles Swanton explain how 100 patients with ‘lung cancer’ actually have 100 different types of cancers #UCLCancerDomain <span class="citation">@ucl_slms</span> <span class="citation">@uclcancer</span> <a href="https://t.co/vWx5Uu86ON" class="uri">https://t.co/vWx5Uu86ON</a>
+</td>
+<td style="text-align:right;">
+4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LRodriguezArco
+</td>
+<td style="text-align:left;">
+Super dedicated #UCLCancerDomain ECN committee members! If you’re an early career researcher please, come around and tell us about your research at our stand in the symposium! <a href="https://t.co/MRdzQf771c" class="uri">https://t.co/MRdzQf771c</a>
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EmilyPMcBride
+</td>
+<td style="text-align:left;">
+<p>Fantastic multidisciplinary talks from Prof <span class="citation">@CharlesSwanton</span>, Dr Duncan Greig and Prof David Gems this morning at #UCLCancerDomain Symposium!</p>
+<span class="citation">@ucl_slms</span> <span class="citation">@UCLCancerECN</span> <span class="citation">@uclcancer</span> <a href="https://t.co/mbFqxcJIxC" class="uri">https://t.co/mbFqxcJIxC</a>
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PereiraGroup
+</td>
+<td style="text-align:left;">
+UCL Cancer Domain Symposium kicking off! 🧬🧫 Loads of great talks ahead! #UCLCancerDomain <span class="citation">@ucl_slms</span> <span class="citation">@UCLCancerECN</span> <a href="https://t.co/Ju3wVF6Bvd" class="uri">https://t.co/Ju3wVF6Bvd</a>
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+UCLCancerECN
+</td>
+<td style="text-align:left;">
+Prof <span class="citation">@CharlesSwanton</span> delivering brilliant talk on cancer evolution, immune evasion and metastatic progression. #UCLCancerDomain #CancerResearch <a href="https://t.co/X8L0xLzXEu" class="uri">https://t.co/X8L0xLzXEu</a>
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+lungsforliving
+</td>
+<td style="text-align:left;">
+Charlie Swanton guides us through the early evolutionary mechanisms of lung cancer defined by his extraordinary TracerX trial and team and demonstrates the potential ‘Achilles heal’ of lung cancer through aggressive targeting of neo-Ags #uclcancerdomain <a href="https://t.co/RJeDCgDbKu" class="uri">https://t.co/RJeDCgDbKu</a>
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="favourites" class="section level1">
+<h1><span class="header-section-number">6</span> Favourites</h1>
+<div id="favourite-proportion" class="section level2">
+<h2><span class="header-section-number">6.1</span> Favourite proportion</h2>
+<p><img src="figures/CancerDomainMay19/has-favorite-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="favourite-count" class="section level2">
+<h2><span class="header-section-number">6.2</span> Favourite count</h2>
+<p><img src="figures/CancerDomainMay19/favorite-count-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="top-favourites" class="section level2">
+<h2><span class="header-section-number">6.3</span> Top favourites</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+screen_name
+</th>
+<th style="text-align:left;">
+text
+</th>
+<th style="text-align:right;">
+favorite_count
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+mmkoo12
+</td>
+<td style="text-align:left;">
+A little nervous about speaking between leading cancer researchers at UCL tomorrow but pleased to be flying the #epidemiology and #publichealth flag in front of such a broad audience! #UCLCancerDomain #postdoclife <a href="https://t.co/1tyW8C6QVO" class="uri">https://t.co/1tyW8C6QVO</a>
+</td>
+<td style="text-align:right;">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+UCLCancerECN
+</td>
+<td style="text-align:left;">
+Only a week to go until the #UCLCancerDomain Symposium where our shortlisted #earlycareer researchers will be showcasing the latest cancer research across UCL! #postdoclife #PhDlife #CancerResearch
+</td>
+<td style="text-align:right;">
+11
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PereiraGroup
+</td>
+<td style="text-align:left;">
+UCL Cancer Domain Symposium kicking off! 🧬🧫 Loads of great talks ahead! #UCLCancerDomain <span class="citation">@ucl_slms</span> <span class="citation">@UCLCancerECN</span> <a href="https://t.co/Ju3wVF6Bvd" class="uri">https://t.co/Ju3wVF6Bvd</a>
+</td>
+<td style="text-align:right;">
+11
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ucl_slms
+</td>
+<td style="text-align:left;">
+Only 3 days until the #UCLCancerDomain Symposium | Rethinking Cancer! It will be fascinating day of talks, networking and discussion sessions. Some of our speakers are: <span class="citation">@MarcelLevi</span> <span class="citation">@MazzucatoM</span> <span class="citation">@andrew_pom</span> <span class="citation">@CharlesSwanton</span> <span class="citation">@ebeecham1</span> <span class="citation">@mmkoo12</span> <span class="citation">@cd_steele</span> <span class="citation">@mrsprostate</span> <span class="citation">@Norapashayan</span>
+</td>
+<td style="text-align:right;">
+11
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+lungsforliving
+</td>
+<td style="text-align:left;">
+Charlie Swanton guides us through the early evolutionary mechanisms of lung cancer defined by his extraordinary TracerX trial and team and demonstrates the potential ‘Achilles heal’ of lung cancer through aggressive targeting of neo-Ags #uclcancerdomain <a href="https://t.co/RJeDCgDbKu" class="uri">https://t.co/RJeDCgDbKu</a>
+</td>
+<td style="text-align:right;">
+9
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+UCLCancerECN
+</td>
+<td style="text-align:left;">
+Prof <span class="citation">@CharlesSwanton</span> delivering brilliant talk on cancer evolution, immune evasion and metastatic progression. #UCLCancerDomain #CancerResearch <a href="https://t.co/X8L0xLzXEu" class="uri">https://t.co/X8L0xLzXEu</a>
+</td>
+<td style="text-align:right;">
+8
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+UCLCancerECN
+</td>
+<td style="text-align:left;">
+Good morning UCL! Almost all of our #CancerECN committee members are attending the #UCLCancerDomain symposium today - a fantastic line up of speakers and talks to look forward to. #CancerResearch
+</td>
+<td style="text-align:right;">
+7
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EmilyPMcBride
+</td>
+<td style="text-align:left;">
+<p>Fantastic multidisciplinary talks from Prof <span class="citation">@CharlesSwanton</span>, Dr Duncan Greig and Prof David Gems this morning at #UCLCancerDomain Symposium!</p>
+<span class="citation">@ucl_slms</span> <span class="citation">@UCLCancerECN</span> <span class="citation">@uclcancer</span> <a href="https://t.co/mbFqxcJIxC" class="uri">https://t.co/mbFqxcJIxC</a>
+</td>
+<td style="text-align:right;">
+7
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+uclmedsci
+</td>
+<td style="text-align:left;">
+This time next week, we’ll be kicking off the inaugural #UCLCancerDomain Symposium | Rethinking Cancer. Register today for this free event <a href="https://t.co/eCnMY0SMem" class="uri">https://t.co/eCnMY0SMem</a> <a href="https://t.co/uYADgUDAmo" class="uri">https://t.co/uYADgUDAmo</a>
+</td>
+<td style="text-align:right;">
+7
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+UCLCancerECN
+</td>
+<td style="text-align:left;">
+The queues are gathering for the #UCLCancerDomain Symposium! Off to an exciting start. <a href="https://t.co/aAz7pfQ9WM" class="uri">https://t.co/aAz7pfQ9WM</a>
+</td>
+<td style="text-align:right;">
+6
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="quotes" class="section level1">
+<h1><span class="header-section-number">7</span> Quotes</h1>
+<div id="quote-proportion" class="section level2">
+<h2><span class="header-section-number">7.1</span> Quote proportion</h2>
+<p><img src="figures/CancerDomainMay19/is-quote-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="quote-count" class="section level2">
+<h2><span class="header-section-number">7.2</span> Quote count</h2>
+<p><img src="figures/CancerDomainMay19/quotes-count-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="top-quotes" class="section level2">
+<h2><span class="header-section-number">7.3</span> Top quotes</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+screen_name
+</th>
+<th style="text-align:left;">
+text
+</th>
+<th style="text-align:right;">
+quote_count
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+mmkoo12
+</td>
+<td style="text-align:left;">
+A little nervous about speaking between leading cancer researchers at UCL tomorrow but pleased to be flying the #epidemiology and #publichealth flag in front of such a broad audience! #UCLCancerDomain #postdoclife <a href="https://t.co/1tyW8C6QVO" class="uri">https://t.co/1tyW8C6QVO</a>
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+mrsprostate
+</td>
+<td style="text-align:left;">
+Looking forward to the #UCLCancerDomain symposium tomorrow! <span class="citation">@ucl_slms</span> <span class="citation">@UCLDivofSurgery</span> <a href="https://t.co/Eks2xpAZVJ" class="uri">https://t.co/Eks2xpAZVJ</a>
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="media" class="section level1">
+<h1><span class="header-section-number">8</span> Media</h1>
+<div id="media-count" class="section level2">
+<h2><span class="header-section-number">8.1</span> Media count</h2>
+<p><img src="figures/CancerDomainMay19/has-media-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="top-media" class="section level2">
+<h2><span class="header-section-number">8.2</span> Top media</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+screen_name
+</th>
+<th style="text-align:left;">
+text
+</th>
+<th style="text-align:right;">
+favorite_count
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+PereiraGroup
+</td>
+<td style="text-align:left;">
+UCL Cancer Domain Symposium kicking off! 🧬🧫 Loads of great talks ahead! #UCLCancerDomain <span class="citation">@ucl_slms</span> <span class="citation">@UCLCancerECN</span> <a href="https://t.co/Ju3wVF6Bvd" class="uri">https://t.co/Ju3wVF6Bvd</a>
+</td>
+<td style="text-align:right;">
+11
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+lungsforliving
+</td>
+<td style="text-align:left;">
+Charlie Swanton guides us through the early evolutionary mechanisms of lung cancer defined by his extraordinary TracerX trial and team and demonstrates the potential ‘Achilles heal’ of lung cancer through aggressive targeting of neo-Ags #uclcancerdomain <a href="https://t.co/RJeDCgDbKu" class="uri">https://t.co/RJeDCgDbKu</a>
+</td>
+<td style="text-align:right;">
+9
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+UCLCancerECN
+</td>
+<td style="text-align:left;">
+Prof <span class="citation">@CharlesSwanton</span> delivering brilliant talk on cancer evolution, immune evasion and metastatic progression. #UCLCancerDomain #CancerResearch <a href="https://t.co/X8L0xLzXEu" class="uri">https://t.co/X8L0xLzXEu</a>
+</td>
+<td style="text-align:right;">
+8
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EmilyPMcBride
+</td>
+<td style="text-align:left;">
+<p>Fantastic multidisciplinary talks from Prof <span class="citation">@CharlesSwanton</span>, Dr Duncan Greig and Prof David Gems this morning at #UCLCancerDomain Symposium!</p>
+<span class="citation">@ucl_slms</span> <span class="citation">@UCLCancerECN</span> <span class="citation">@uclcancer</span> <a href="https://t.co/mbFqxcJIxC" class="uri">https://t.co/mbFqxcJIxC</a>
+</td>
+<td style="text-align:right;">
+7
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+uclmedsci
+</td>
+<td style="text-align:left;">
+This time next week, we’ll be kicking off the inaugural #UCLCancerDomain Symposium | Rethinking Cancer. Register today for this free event <a href="https://t.co/eCnMY0SMem" class="uri">https://t.co/eCnMY0SMem</a> <a href="https://t.co/uYADgUDAmo" class="uri">https://t.co/uYADgUDAmo</a>
+</td>
+<td style="text-align:right;">
+7
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+UCLCancerECN
+</td>
+<td style="text-align:left;">
+The queues are gathering for the #UCLCancerDomain Symposium! Off to an exciting start. <a href="https://t.co/aAz7pfQ9WM" class="uri">https://t.co/aAz7pfQ9WM</a>
+</td>
+<td style="text-align:right;">
+6
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+jsvaidya
+</td>
+<td style="text-align:left;">
+Prof Daniel Hochhauser starting off the first UCL cancer domain symposium-Rethinking Cancer #UCLCancerDomain <span class="citation">@ucl_slms</span> <span class="citation">@uclcancer</span> <a href="https://t.co/yTkb1CAwtS" class="uri">https://t.co/yTkb1CAwtS</a>
+</td>
+<td style="text-align:right;">
+6
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+jsvaidya
+</td>
+<td style="text-align:left;">
+Prof Charles Swanton explain how 100 patients with ‘lung cancer’ actually have 100 different types of cancers #UCLCancerDomain <span class="citation">@ucl_slms</span> <span class="citation">@uclcancer</span> <a href="https://t.co/vWx5Uu86ON" class="uri">https://t.co/vWx5Uu86ON</a>
+</td>
+<td style="text-align:right;">
+6
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+UCLCancerECN
+</td>
+<td style="text-align:left;">
+<p>Up next: Evolutionary biologist Dr Duncan Greig discussing microbes as models for cancer evolution.</p>
+#UCLCancerDomain #CancerResearch #cancer <a href="https://t.co/9xgvF2EaIN" class="uri">https://t.co/9xgvF2EaIN</a>
+</td>
+<td style="text-align:right;">
+5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+UCLCancerECN
+</td>
+<td style="text-align:left;">
+<p>Heart disease and cancer are the biggest killers in the UK, but the common driver behind all is ageing.</p>
+So the broader question becomes: what causes ageing? Prof David Gems discusses the leading theories. #UCLCancerDomain <a href="https://t.co/hFCo1Qb1ZH" class="uri">https://t.co/hFCo1Qb1ZH</a>
+</td>
+<td style="text-align:right;">
+5
+</td>
+</tr>
+</tbody>
+</table>
+<div id="most-liked-media-image" class="section level3">
+<h3><span class="header-section-number">8.2.1</span> Most liked media image</h3>
+<div class="figure">
+<img src="http://pbs.twimg.com/media/D6bvSDpX4AEswj3.jpg" />
+
+</div>
+</div>
+</div>
+</div>
+<div id="tweet-text" class="section level1">
+<h1><span class="header-section-number">9</span> Tweet text</h1>
+<div id="word-cloud" class="section level2">
+<h2><span class="header-section-number">9.1</span> Word cloud</h2>
+<p>The top 100 words used 3 or more times.</p>
+<p><img src="figures/CancerDomainMay19/count-words-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="bigram-graph" class="section level2">
+<h2><span class="header-section-number">9.2</span> Bigram graph</h2>
+<p>Words that were tweeted next to each other at least 5 times.</p>
+<p><img src="figures/CancerDomainMay19/bigram-graph-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="topic-modelling" class="section level2">
+<h2><span class="header-section-number">9.3</span> Topic modelling</h2>
+<p>Top 10 words associated with 6 topics identified by LDA.</p>
+<p><img src="figures/CancerDomainMay19/topics-words-1.png" width="960" style="display: block; margin: auto;" /></p>
+<div id="representative-tweets" class="section level3 tabset">
+<h3><span class="header-section-number">9.3.1</span> Representative tweets</h3>
+<p>Most representative tweets for each topic</p>
+<div id="topic-1" class="section level4 unnumbered">
+<h4>Topic 1</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+screen_name
+</th>
+<th style="text-align:left;">
+text
+</th>
+<th style="text-align:right;">
+gamma
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+UCLCancerECN
+</td>
+<td style="text-align:left;">
+<p>Heart disease and cancer are the biggest killers in the UK, but the common driver behind all is ageing.</p>
+So the broader question becomes: what causes ageing? Prof David Gems discusses the leading theories. #UCLCancerDomain <a href="https://t.co/hFCo1Qb1ZH" class="uri">https://t.co/hFCo1Qb1ZH</a>
+</td>
+<td style="text-align:right;">
+0.9961999
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rociorojib
+</td>
+<td style="text-align:left;">
+Ageing paradigms. Oxidative damage theory vs/plus antagonistic pleiotropy. David Gems at #UCLCancerDomain. A particular nematode and cancer and ageing. Other senescent pathologies
+</td>
+<td style="text-align:right;">
+0.9948511
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EmilyPMcBride
+</td>
+<td style="text-align:left;">
+<p>Fantastic multidisciplinary talks from Prof <span class="citation">@CharlesSwanton</span>, Dr Duncan Greig and Prof David Gems this morning at #UCLCancerDomain Symposium!</p>
+<span class="citation">@ucl_slms</span> <span class="citation">@UCLCancerECN</span> <span class="citation">@uclcancer</span> <a href="https://t.co/mbFqxcJIxC" class="uri">https://t.co/mbFqxcJIxC</a>
+</td>
+<td style="text-align:right;">
+0.9948511
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JavierHerrero7
+</td>
+<td style="text-align:left;">
+.<span class="citation">@CharlesSwanton</span> In NSCLC, increase of chromosomal instability post-genome doubling. Moreover, genome doubling happens typically very early. #UCLCancerDomain <span class="citation">@ucl_slms</span> <span class="citation">@uclcancer</span>
+</td>
+<td style="text-align:right;">
+0.9934578
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+jsvaidya
+</td>
+<td style="text-align:left;">
+Prof Charles Swanton explain how 100 patients with ‘lung cancer’ actually have 100 different types of cancers #UCLCancerDomain <span class="citation">@ucl_slms</span> <span class="citation">@uclcancer</span> <a href="https://t.co/KwNeghAk0V" class="uri">https://t.co/KwNeghAk0V</a>
+</td>
+<td style="text-align:right;">
+0.9928093
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+jsvaidya
+</td>
+<td style="text-align:left;">
+Prof Charles Swanton explain how 100 patients with ‘lung cancer’ actually have 100 different types of cancers #UCLCancerDomain <span class="citation">@ucl_slms</span> <span class="citation">@uclcancer</span> <a href="https://t.co/vWx5Uu86ON" class="uri">https://t.co/vWx5Uu86ON</a>
+</td>
+<td style="text-align:right;">
+0.9928093
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+UCLCancerECN
+</td>
+<td style="text-align:left;">
+How does the immune system recognise #cancer? Prof <span class="citation">@CharlesSwanton</span> explains at #UCLCancerDomain 👇 <a href="https://t.co/6Qujf4lZL2" class="uri">https://t.co/6Qujf4lZL2</a>
+</td>
+<td style="text-align:right;">
+0.9910309
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="topic-2" class="section level4 unnumbered">
+<h4>Topic 2</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+screen_name
+</th>
+<th style="text-align:left;">
+text
+</th>
+<th style="text-align:right;">
+gamma
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+mmkoo12
+</td>
+<td style="text-align:left;">
+A little nervous about speaking between leading cancer researchers at UCL tomorrow but pleased to be flying the #epidemiology and #publichealth flag in front of such a broad audience! #UCLCancerDomain #postdoclife <a href="https://t.co/1tyW8C6QVO" class="uri">https://t.co/1tyW8C6QVO</a>
+</td>
+<td style="text-align:right;">
+0.9957551
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ucl_slms
+</td>
+<td style="text-align:left;">
+Only 3 days until the #UCLCancerDomain Symposium | Rethinking Cancer! It will be fascinating day of talks, networking and discussion sessions. Some of our speakers are: <span class="citation">@MarcelLevi</span> <span class="citation">@MazzucatoM</span> <span class="citation">@andrew_pom</span> <span class="citation">@CharlesSwanton</span> <span class="citation">@ebeecham1</span> <span class="citation">@mmkoo12</span> <span class="citation">@cd_steele</span> <span class="citation">@mrsprostate</span> <span class="citation">@Norapashayan</span>
+</td>
+<td style="text-align:right;">
+0.9954912
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+mmkoo12
+</td>
+<td style="text-align:left;">
+The first session of the #UCLCancerDomain symposium off to a start with a Prof <span class="citation">@CharlesSwanton</span> talking about cancer evolution: why is cancer cure so elusive given the linear model of clonal progression?
+</td>
+<td style="text-align:right;">
+0.9951923
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+UCLCancerECN
+</td>
+<td style="text-align:left;">
+Prof <span class="citation">@CharlesSwanton</span> delivering brilliant talk on cancer evolution, immune evasion and metastatic progression. #UCLCancerDomain #CancerResearch <a href="https://t.co/X8L0xLzXEu" class="uri">https://t.co/X8L0xLzXEu</a>
+</td>
+<td style="text-align:right;">
+0.9944576
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+UCL_BSH
+</td>
+<td style="text-align:left;">
+Lots of BSH researchers in attendance at today’s first #UCLCancerDomain symposium - including a quick-fire talk by <span class="citation">@mmkoo12</span> in the #earlycareers slot.
+</td>
+<td style="text-align:right;">
+0.9939991
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+UCLCancerECN
+</td>
+<td style="text-align:left;">
+Good morning UCL! Almost all of our #CancerECN committee members are attending the #UCLCancerDomain symposium today - a fantastic line up of speakers and talks to look forward to. #CancerResearch
+</td>
+<td style="text-align:right;">
+0.9939991
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+UCLCancerECN
+</td>
+<td style="text-align:left;">
+The queues are gathering for the #UCLCancerDomain Symposium! Off to an exciting start. <a href="https://t.co/aAz7pfQ9WM" class="uri">https://t.co/aAz7pfQ9WM</a>
+</td>
+<td style="text-align:right;">
+0.9880840
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+mrsprostate
+</td>
+<td style="text-align:left;">
+Looking forward to the #UCLCancerDomain symposium tomorrow! <span class="citation">@ucl_slms</span> <span class="citation">@UCLDivofSurgery</span> <a href="https://t.co/Eks2xpAZVJ" class="uri">https://t.co/Eks2xpAZVJ</a>
+</td>
+<td style="text-align:right;">
+0.9857416
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TheWhitakerlab
+</td>
+<td style="text-align:left;">
+Great start to the #UCLCancerDomain Symposium <span class="citation">@CharlesSwanton</span><br />
+<span class="citation">@UCLCancerECN</span> <span class="citation">@uclmedsci</span> <a href="https://t.co/PFERHpefZ1" class="uri">https://t.co/PFERHpefZ1</a>
+</td>
+<td style="text-align:right;">
+0.9822529
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+AttardLab
+</td>
+<td style="text-align:left;">
+Several members of the team are attending the Inaugural #UCLCancerDomain Symposium <span class="citation">@ucl_slms</span> <span class="citation">@uclcancer</span> today. Kicking off the day is <span class="citation">@CharlesSwanton</span> in the session “Cancer Evolution: can we beat Nature?”.
+</td>
+<td style="text-align:right;">
+0.7738815
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="topic-3" class="section level4 unnumbered">
+<h4>Topic 3</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+screen_name
+</th>
+<th style="text-align:left;">
+text
+</th>
+<th style="text-align:right;">
+gamma
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+JavierHerrero7
+</td>
+<td style="text-align:left;">
+Tariq Enver — ETV6-RUNX1 prevents differentiation, maintains myeloid programme in lymphoid-meant cell, also induces quiescent and enables overactive RAG giving rise to additional mutations. #UCLCancerDomain <span class="citation">@ucl_slms</span> <span class="citation">@uclcancer</span>
+</td>
+<td style="text-align:right;">
+0.9965603
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JavierHerrero7
+</td>
+<td style="text-align:left;">
+Duncan Greig — Khan et al (<a href="https://t.co/wgGnmhbmQr" class="uri">https://t.co/wgGnmhbmQr</a>) show initial effect of treatment followed by relapse. Similar result in bacteria, with collapse and recovery after treatment with lethal drug (Bell &amp;amp; Gonzalez: <a href="https://t.co/1iFVHZTqBK" class="uri">https://t.co/1iFVHZTqBK</a>) #UCLCancerDomain <span class="citation">@ucl_slms</span>
+</td>
+<td style="text-align:right;">
+0.9963891
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JavierHerrero7
+</td>
+<td style="text-align:left;">
+.<span class="citation">@CharlesSwanton</span> referring to the loss of HLA as mechanism of Immune escape (see LOHHLA paper: <a href="https://t.co/q01wr8uzCv" class="uri">https://t.co/q01wr8uzCv</a>). Very commonly happening sub-clonally and more prominent in highly immune infiltrated tumours #UCLCancerDomain <span class="citation">@ucl_slms</span> <span class="citation">@uclcancer</span>
+</td>
+<td style="text-align:right;">
+0.9959898
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JavierHerrero7
+</td>
+<td style="text-align:left;">
+Tariq Enver — mentions Böiers, Richardson et al (<a href="https://t.co/pIb77m255r" class="uri">https://t.co/pIb77m255r</a>) showing the effect of ETV6-RUNX1 on the transcriptional programme, blocking the differentiation programme #UCLCancerDomain <span class="citation">@ucl_slms</span> <span class="citation">@uclcancer</span> <a href="https://t.co/8NT8Ll4ipE" class="uri">https://t.co/8NT8Ll4ipE</a>
+</td>
+<td style="text-align:right;">
+0.9954912
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JavierHerrero7
+</td>
+<td style="text-align:left;">
+Tariq Enver talks now about B-cell childhood ALL. 1/4 of cases contain the t(12;21) translocation, fusing ETV6 and RUNX1. This is initial hit, but not sufficient as 1/1000 incidence but only 1/1000 of those transform. #UCLCancerDomain <span class="citation">@ucl_slms</span> <span class="citation">@uclcancer</span>
+</td>
+<td style="text-align:right;">
+0.9951923
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rociorojib
+</td>
+<td style="text-align:left;">
+Tariq Enver continues on cancer evolution with childhood Leukaemia #UCLCancerDomain
+</td>
+<td style="text-align:right;">
+0.7075601
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="topic-4" class="section level4 unnumbered">
+<h4>Topic 4</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+screen_name
+</th>
+<th style="text-align:left;">
+text
+</th>
+<th style="text-align:right;">
+gamma
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+JavierHerrero7
+</td>
+<td style="text-align:left;">
+Duncan Greig — Basis of resistance: in bacteria + antibiotics, colony develops resistance. However, individual cells are not: can be retreated. In yeast (Levy et al, PLOS Biol 2012) similar results: slow growing cells are more resistant to env stress. #UCLCancerDomain <span class="citation">@ucl_slms</span>
+</td>
+<td style="text-align:right;">
+0.9971087
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JavierHerrero7
+</td>
+<td style="text-align:left;">
+.<span class="citation">@CharlesSwanton</span> Diversity (ITH) vs outcome? Indeed, splitting high CIN vs low CIN in fist 100 lung #TRACERx show high ITH with poor outcome. For instance, recurrent mutations in the same drivers in different clones/regions of the same tumour #UCLCancerDomain <span class="citation">@ucl_slms</span> <span class="citation">@uclcancer</span>
+</td>
+<td style="text-align:right;">
+0.9965603
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JavierHerrero7
+</td>
+<td style="text-align:left;">
+Duncan Greig — Basis of resistance: Positioning different processes in a 2D graph of reversible vs non-reservable and specific vs random mutations, shows differences between evolvability and phenotypic plasticity, although are related #UCLCancerDomain <span class="citation">@ucl_slms</span>
+</td>
+<td style="text-align:right;">
+0.9959898
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rociorojib
+</td>
+<td style="text-align:left;">
+Dr. Duncan Greig talking about microbes as models for cancer resistance to drugs. Mutations are random, natural selection determinants and yeast as an example #UCLCancerDomain <span class="citation">@ucl_slms</span> <a href="https://t.co/bI4pGBlXIM" class="uri">https://t.co/bI4pGBlXIM</a>
+</td>
+<td style="text-align:right;">
+0.9954912
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JavierHerrero7
+</td>
+<td style="text-align:left;">
+Duncan Greig — Basis of resistance: Radman in 1975 (<a href="https://t.co/1lNiVeInM3" class="uri">https://t.co/1lNiVeInM3</a>) showed that stress can induce mutations #UCLCancerDomain <span class="citation">@ucl_slms</span>
+</td>
+<td style="text-align:right;">
+0.9920179
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="topic-5" class="section level4 unnumbered">
+<h4>Topic 5</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+screen_name
+</th>
+<th style="text-align:left;">
+text
+</th>
+<th style="text-align:right;">
+gamma
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+lungsforliving
+</td>
+<td style="text-align:left;">
+Charlie Swanton guides us through the early evolutionary mechanisms of lung cancer defined by his extraordinary TracerX trial and team and demonstrates the potential ‘Achilles heal’ of lung cancer through aggressive targeting of neo-Ags #uclcancerdomain <a href="https://t.co/RJeDCgDbKu" class="uri">https://t.co/RJeDCgDbKu</a>
+</td>
+<td style="text-align:right;">
+0.9968583
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+UCLCancerECN
+</td>
+<td style="text-align:left;">
+Big shout out to all #earlycareer researchers (Masters, PhDs, postdocs and beyond) attending today’s #UCLCancerDomain Symposium! Pop by our #earlycareer network stall and help us map #CancerResearch across UCL. <span class="citation">@ucl_slms</span>
+</td>
+<td style="text-align:right;">
+0.9954912
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+UCLCancerECN
+</td>
+<td style="text-align:left;">
+<p>Up next: Evolutionary biologist Dr Duncan Greig discussing microbes as models for cancer evolution.</p>
+#UCLCancerDomain #CancerResearch #cancer <a href="https://t.co/9xgvF2EaIN" class="uri">https://t.co/9xgvF2EaIN</a>
+</td>
+<td style="text-align:right;">
+0.9944576
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JavierHerrero7
+</td>
+<td style="text-align:left;">
+Dr Duncan Greig (UCL Department of Genetics, Evolution and Environment) Microbes as models for cancer evolution. #UCLCancerDomain <span class="citation">@ucl_slms</span>
+</td>
+<td style="text-align:right;">
+0.9939991
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+UCLCancerECN
+</td>
+<td style="text-align:left;">
+Only a week to go until the #UCLCancerDomain Symposium where our shortlisted #earlycareer researchers will be showcasing the latest cancer research across UCL! #postdoclife #PhDlife #CancerResearch
+</td>
+<td style="text-align:right;">
+0.9939991
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JavierHerrero7
+</td>
+<td style="text-align:left;">
+.<span class="citation">@CharlesSwanton</span> talking about cancer evolution and why this is important. Initial studies led to TRACERx in lung (<a href="https://t.co/FMlCd9UsSs" class="uri">https://t.co/FMlCd9UsSs</a>) and kidney (<a href="https://t.co/3INoNxLfqS" class="uri">https://t.co/3INoNxLfqS</a>) #UCLCancerDomain <span class="citation">@ucl_slms</span> <span class="citation">@uclcancer</span>
+</td>
+<td style="text-align:right;">
+0.9939991
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LRodriguezArco
+</td>
+<td style="text-align:left;">
+Super dedicated #UCLCancerDomain ECN committee members! If you’re an early career researcher please, come around and tell us about your research at our stand in the symposium! <a href="https://t.co/MRdzQf771c" class="uri">https://t.co/MRdzQf771c</a>
+</td>
+<td style="text-align:right;">
+0.9928093
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JavierHerrero7
+</td>
+<td style="text-align:left;">
+Duncan Greig — Experimental evolution with microbes Good et al, Nature, 2017 (<a href="https://t.co/q3Snqeb2zg" class="uri">https://t.co/q3Snqeb2zg</a>) #UCLCancerDomain <span class="citation">@ucl_slms</span> <a href="https://t.co/MB3vW6d9Ne" class="uri">https://t.co/MB3vW6d9Ne</a>
+</td>
+<td style="text-align:right;">
+0.9920179
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rociorojib
+</td>
+<td style="text-align:left;">
+Linear vs branched cancer evolution by <span class="citation">@CharlesSwanton</span>. #UCLCancerDomain <a href="https://t.co/rHflSovhXS" class="uri">https://t.co/rHflSovhXS</a>
+</td>
+<td style="text-align:right;">
+0.9880840
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="topic-6" class="section level4 unnumbered">
+<h4>Topic 6</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+screen_name
+</th>
+<th style="text-align:left;">
+text
+</th>
+<th style="text-align:right;">
+gamma
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+JavierHerrero7
+</td>
+<td style="text-align:left;">
+Starting the “Rethinking Cancer” Symposium organised by the UCL Cancer Domain. For questions, discussions, etc: <a href="https://t.co/5xLnE5ztEt" class="uri">https://t.co/5xLnE5ztEt</a> event num. 6906 #UCLCancerDomain <span class="citation">@ucl_slms</span> <span class="citation">@uclcancer</span>
+</td>
+<td style="text-align:right;">
+0.9944576
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+uclmedsci
+</td>
+<td style="text-align:left;">
+This time next week, we’ll be kicking off the inaugural #UCLCancerDomain Symposium | Rethinking Cancer. Register today for this free event <a href="https://t.co/eCnMY0SMem" class="uri">https://t.co/eCnMY0SMem</a> <a href="https://t.co/uYADgUDAmo" class="uri">https://t.co/uYADgUDAmo</a>
+</td>
+<td style="text-align:right;">
+0.9939991
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ucl_slms
+</td>
+<td style="text-align:left;">
+We are excited to have these sponsors exhibiting at the #UCLCancerDomain Symposium on Monday - <span class="citation">@2BScientific</span> <span class="citation">@BioLegend</span> <span class="citation">@CambridgeBiosci</span> <span class="citation">@CellSignal</span> <span class="citation">@LICORBio</span> <span class="citation">@PerkinElmer</span> <span class="citation">@StillaTech</span> <a href="https://t.co/XfhCIWulWs" class="uri">https://t.co/XfhCIWulWs</a>
+</td>
+<td style="text-align:right;">
+0.9939991
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+jsvaidya
+</td>
+<td style="text-align:left;">
+Prof Daniel Hochhauser starting off the first UCL cancer domain symposium-Rethinking Cancer #UCLCancerDomain <span class="citation">@ucl_slms</span> <span class="citation">@uclcancer</span> <a href="https://t.co/yTkb1CAwtS" class="uri">https://t.co/yTkb1CAwtS</a>
+</td>
+<td style="text-align:right;">
+0.9934578
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PereiraGroup
+</td>
+<td style="text-align:left;">
+UCL Cancer Domain Symposium kicking off! 🧬🧫 Loads of great talks ahead! #UCLCancerDomain <span class="citation">@ucl_slms</span> <span class="citation">@UCLCancerECN</span> <a href="https://t.co/Ju3wVF6Bvd" class="uri">https://t.co/Ju3wVF6Bvd</a>
+</td>
+<td style="text-align:right;">
+0.9920179
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+pilar_acedo
+</td>
+<td style="text-align:left;">
+And the UCL Cancer Domain Symposium starts with Charles Swanton!! 🤓 🙌🏻 <span class="citation">@uclmedsci</span> <span class="citation">@UCLCancerECN</span> <span class="citation">@CharlesSwanton</span> #UCLCancerDomain <a href="https://t.co/jQrlavPQG6" class="uri">https://t.co/jQrlavPQG6</a>
+</td>
+<td style="text-align:right;">
+0.9920179
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ucl_slms
+</td>
+<td style="text-align:left;">
+Only a few days to go until the inaugural #UCLCancerDomain Symposium | Rethinking Cancer on Monday! <a href="https://t.co/OWsa9YGhIL" class="uri">https://t.co/OWsa9YGhIL</a>
+</td>
+<td style="text-align:right;">
+0.9897654
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rociorojib
+</td>
+<td style="text-align:left;">
+Just started! First #UCLCancerDomain Symposium | Rethinking Cancer! <span class="citation">@ucl_slms</span> <a href="https://t.co/1w1Xhcddkx" class="uri">https://t.co/1w1Xhcddkx</a>
+</td>
+<td style="text-align:right;">
+0.9857416
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DanMarcu
+</td>
+<td style="text-align:left;">
+<span class="citation">@CharlesSwanton</span> starting the #UCLCancerDomain with the evolutionary mechanisms and diversity in tumour #cancer #genetics #evolution #science #cure <span class="citation">@UCLCancerECN</span> <span class="citation">@uclcancer</span> <a href="https://t.co/XryCnw4gc8" class="uri">https://t.co/XryCnw4gc8</a>
+</td>
+<td style="text-align:right;">
+0.8681175
+</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</div>
+</div>
+</div>
+<div id="session-info" class="section level1 unnumbered">
+<h1>Session info</h1>
+<pre><code>## R version 3.5.1 (2018-07-02)
+## Platform: x86_64-apple-darwin15.6.0 (64-bit)
+## Running under: macOS  10.14.4
+## 
+## Matrix products: default
+## BLAS: /Library/Frameworks/R.framework/Versions/3.5/Resources/lib/libRblas.0.dylib
+## LAPACK: /Library/Frameworks/R.framework/Versions/3.5/Resources/lib/libRlapack.dylib
+## 
+## locale:
+## [1] en_GB.UTF-8/en_GB.UTF-8/en_GB.UTF-8/C/en_GB.UTF-8/en_GB.UTF-8
+## 
+## attached base packages:
+## [1] stats     graphics  grDevices utils     datasets  methods   base     
+## 
+## other attached packages:
+##  [1] bindrcpp_0.2.2     here_0.1           knitr_1.20        
+##  [4] viridis_0.5.1      viridisLite_0.3.0  ggraph_1.0.2      
+##  [7] wordcloud_2.6      RColorBrewer_1.1-2 ggrepel_0.8.0     
+## [10] ggplot2_3.0.0      igraph_1.2.2       topicmodels_0.2-8 
+## [13] tidytext_0.2.0     forcats_0.3.0      lubridate_1.7.4   
+## [16] tidyr_0.8.1        dplyr_0.7.6        rtweet_0.6.8      
+## 
+## loaded via a namespace (and not attached):
+##  [1] Rcpp_0.12.19      lattice_0.20-35   utf8_1.1.4       
+##  [4] assertthat_0.2.0  rprojroot_1.3-2   digest_0.6.18    
+##  [7] ggforce_0.1.3     slam_0.1-45       R6_2.3.0         
+## [10] plyr_1.8.4        backports_1.1.2   stats4_3.5.1     
+## [13] evaluate_0.12     highr_0.7         httr_1.3.1       
+## [16] pillar_1.3.0      rlang_0.2.2       lazyeval_0.2.1   
+## [19] curl_3.2          Matrix_1.2-14     rmarkdown_1.10   
+## [22] labeling_0.3      stringr_1.3.1     munsell_0.5.0    
+## [25] broom_0.5.0       compiler_3.5.1    janeaustenr_0.1.5
+## [28] pkgconfig_2.0.2   htmltools_0.3.6   openssl_1.0.2    
+## [31] tidyselect_0.2.5  tibble_1.4.2      gridExtra_2.3    
+## [34] fansi_0.4.0       crayon_1.3.4      withr_2.1.2      
+## [37] MASS_7.3-50       SnowballC_0.5.1   grid_3.5.1       
+## [40] nlme_3.1-137      jsonlite_1.5      gtable_0.2.0     
+## [43] magrittr_1.5      units_0.6-1       scales_1.0.0     
+## [46] tokenizers_0.2.1  cli_1.0.1         stringi_1.2.4    
+## [49] reshape2_1.4.3    farver_1.0        NLP_0.2-0        
+## [52] xml2_1.2.0        tools_3.5.1       glue_1.3.0       
+## [55] tweenr_1.0.0      purrr_0.2.5       parallel_3.5.1   
+## [58] yaml_2.2.0        tm_0.7-6          colorspace_1.3-2 
+## [61] bindr_0.1.1       modeltools_0.2-22</code></pre>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
