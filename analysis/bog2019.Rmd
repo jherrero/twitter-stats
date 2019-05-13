@@ -11,6 +11,7 @@ output:
 
 ```{r knitr, include = FALSE}
 DOCNAME <- tools::file_path_sans_ext(knitr::current_input())
+DOCNAME <- "bog2019"
 knitr::opts_chunk$set(autodep        = TRUE,
                       cache          = FALSE,
                       cache.path     = paste0("cache/", DOCNAME, "/"),
@@ -62,7 +63,7 @@ set.seed(1)
 hashtag <- "#BoG19"
 conf_name <- "Biology of Genomes 2019"
 timezone <- "America/New_York"
-days <- c("2019-05-07", "2019-05-08", "2019-05-09", "2019-05-10")
+days <- c("2019-05-07", "2019-05-08", "2019-05-09", "2019-05-10", "2019-05-11")
 accent <- "skyblue3"
 pal <- "Set1"
 topics_k <- 6
