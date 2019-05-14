@@ -8,3 +8,6 @@
 # Intermediate figure files
 analysis/figures/
 .Rproj.user
+
+# Final output
+docs/
