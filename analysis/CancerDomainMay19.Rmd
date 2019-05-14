@@ -1,7 +1,6 @@
 ---
 title: "Twitter coverage of the 'Rethinking Cancer' UCL Cancer Domain Symposium"
 author: "Javier Herrero"
-date: "`r Sys.time()`"
 output: 
   html_document: 
     number_sections: yes
@@ -108,6 +107,8 @@ if (fixed) {
 An analysis of tweets from the `r conf_name` conference. A total of
 `r nrow(tweets)` tweets from `r length(unique(tweets$screen_name))` users were 
 collected using the `rtweet` R package.
+
+Data were last collected on `r file.info(data_file)$mtime`
 
 # Timeline
 
@@ -229,15 +230,13 @@ tweets %>%
     mutate(screen_name = factor(screen_name,
                                 levels = levels(top_users))) %>%
     mutate(datetime = as_datetime(created_at, tz = timezone)) %>%
-    ggplot(aes(datetime, 1, shape = is_retweet, colour = screen_name, fill = screen_name)) +
+    ggplot(aes(datetime, 1, shape = is_retweet, colour = screen_name)) +
         geom_jitter(width = 0, height = 1) +
         scale_color_brewer(palette = pal, guide = FALSE) +
         scale_fill_brewer(palette = pal, guide = FALSE) +
         scale_shape_manual(name = "Tweet type",
-                           values = c(`TRUE` = 1, `FALSE` = 21),
-                           labels = c("retweet", "original"),
-                           guide=FALSE) +
-        # scale_fill_manual(guide=FALSE) +
+                           values = c(`TRUE` = 21, `FALSE` = 19),
+                           labels = c("original", "retweet")) +
         facet_wrap(~ screen_name, ncol = 1) +
         labs(x = "Datetime",
              title = paste(hashtag, "top users timeline"),
@@ -293,15 +292,13 @@ out <- knit_child(text = unlist(c("## Top tweeters by day", src_list)))
 
 ```{r tweets-top-sources}
 tweets %>% 
-    distinct(screen_name, source) %>%
     count(source) %>% 
     filter(n >= 5) %>% 
     ggplot(aes(reorder(source, n), n)) +
         geom_col(fill = accent) +
         coord_flip() + 
         labs(x = "Source", y = "Tweets",
-             title = paste(hashtag, "tweets by source"),
-             subtitle = "distinct(screen_name, source) with >= 5 tweets") + 
+             title = paste(hashtag, "tweets by source")) +
         theme(axis.text = element_text(size = 12),
               axis.title = element_text(size = 12))
 ```
